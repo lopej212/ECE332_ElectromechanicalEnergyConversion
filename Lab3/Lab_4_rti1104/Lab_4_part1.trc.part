@@ -1,0 +1,276 @@
+-- ******** Model variables ***************************************************
+
+group "Model Root"
+  
+  
+	group "RTI Data" -- subsystem-group
+
+
+	endgroup -- subsystem-group "RTI Data"
+  
+  
+	group "Subsystem1" -- subsystem-group
+
+		p_0_Lab_4_real_T_0[8]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 flags:   OUTPUT|READONLY
+		}
+
+
+		group "Constant" -- block-group
+		{
+		 block: "Constant"
+		}
+			-- Skipping output Out1
+			p_1_Lab_4_real_T_0[15]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Value"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "Constant"
+
+		group "Sine Wave" -- block-group
+		{
+		 block: "Sin"
+		}
+			p_0_Lab_4_real_T_0[5]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 flags:   OUTPUT|READONLY
+			}
+			p_1_Lab_4_real_T_0[3]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Amplitude"
+			 flags:   PARAM
+			}
+			p_1_Lab_4_real_T_0[4]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Bias"
+			 flags:   PARAM
+			}
+			p_1_Lab_4_real_T_0[5]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Frequency"
+			 flags:   PARAM
+			}
+			p_1_Lab_4_real_T_0[6]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Phase"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "Sine Wave"
+
+		group "Sine Wave1" -- block-group
+		{
+		 block: "Sin"
+		}
+			p_0_Lab_4_real_T_0[6]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 flags:   OUTPUT|READONLY
+			}
+			p_1_Lab_4_real_T_0[7]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Amplitude"
+			 flags:   PARAM
+			}
+			p_1_Lab_4_real_T_0[8]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Bias"
+			 flags:   PARAM
+			}
+			p_1_Lab_4_real_T_0[9]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Frequency"
+			 flags:   PARAM
+			}
+			p_1_Lab_4_real_T_0[10]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Phase"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "Sine Wave1"
+
+		group "Sine Wave2" -- block-group
+		{
+		 block: "Sin"
+		}
+			p_0_Lab_4_real_T_0[7]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 flags:   OUTPUT|READONLY
+			}
+			p_1_Lab_4_real_T_0[11]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Amplitude"
+			 flags:   PARAM
+			}
+			p_1_Lab_4_real_T_0[12]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Bias"
+			 flags:   PARAM
+			}
+			p_1_Lab_4_real_T_0[13]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Frequency"
+			 flags:   PARAM
+			}
+			p_1_Lab_4_real_T_0[14]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Phase"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "Sine Wave2"
+
+  
+  
+		group "DS1104SL_DSP_PWM3" -- subsystem-group
+
+
+		endgroup -- subsystem-group "DS1104SL_DSP_PWM3"
+  
+  
+		group "Subsystem" -- subsystem-group
+
+			p_0_Lab_4_real_T_0[8]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "avg_rpm"
+			 flags:   OUTPUT|READONLY
+			}
+
+
+			group "displacement" -- block-group
+			{
+			 block: "Gain"
+			}
+				p_0_Lab_4_real_T_0[4]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1"
+				 flags:   OUTPUT|READONLY
+				}
+				p_1_Lab_4_real_T_0[2]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Gain"
+				 flags:   PARAM
+				}
+
+
+			endgroup -- block-group "displacement"
+
+			group "rev" -- block-group
+			{
+			 block: "Gain"
+			}
+				p_0_Lab_4_real_T_0[3]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1"
+				 flags:   OUTPUT|READONLY
+				}
+				p_1_Lab_4_real_T_0[1]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Gain"
+				 flags:   PARAM
+				}
+
+
+			endgroup -- block-group "rev"
+
+			group "velocity" -- block-group
+			{
+			 block: "Gain"
+			}
+				p_0_Lab_4_real_T_0[2]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1"
+				 flags:   OUTPUT|READONLY
+				}
+				p_1_Lab_4_real_T_0[0]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Gain"
+				 flags:   PARAM
+				}
+
+
+			endgroup -- block-group "velocity"
+
+			group "Moving\nAverage" -- block-group
+			{
+			 block: "MATLABSystem"
+			}
+				p_0_Lab_4_real_T_0[8]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1"
+				 flags:   OUTPUT|READONLY
+				}
+
+
+			endgroup -- block-group "Moving\nAverage"
+
+  
+  
+			group "DS1104ENC_POS_C1" -- subsystem-group
+
+				p_0_Lab_4_real_T_0[0]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Enc position"
+				 flags:   OUTPUT|READONLY
+				}
+				p_0_Lab_4_real_T_0[1]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Enc delta position"
+				 flags:   OUTPUT|READONLY
+				}
+
+			endgroup -- subsystem-group "DS1104ENC_POS_C1"
+  
+  
+			group "DS1104ENC_SETUP" -- subsystem-group
+
+
+			endgroup -- subsystem-group "DS1104ENC_SETUP"
+
+
+		endgroup -- subsystem-group "Subsystem"
+
+
+	endgroup -- subsystem-group "Subsystem1"
+
+
+
+endgroup -- "Model Root"

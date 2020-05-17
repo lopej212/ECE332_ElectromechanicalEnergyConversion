@@ -1,0 +1,1 @@
+   Lab7.c  Lab7_trc_ptr.c 

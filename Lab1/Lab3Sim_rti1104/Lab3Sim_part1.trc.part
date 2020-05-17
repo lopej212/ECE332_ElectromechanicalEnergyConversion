@@ -1,0 +1,206 @@
+-- ******** Model variables ***************************************************
+
+group "Model Root"
+	group "Out1" -- block-group
+	{
+	 block: "Outport"
+	}
+		p_3_Lab3Sim_real_T_0[0]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "In1"
+		 flags:   READONLY
+		}
+
+
+
+	endgroup -- block-group "Out1"
+
+	group "Cmd" -- block-group
+	{
+	 block: "Constant"
+	}
+		-- Skipping output Out1
+		p_1_Lab3Sim_real_T_0[0]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "Cmd"
+
+	group "Constant" -- block-group
+	{
+	 block: "Constant"
+	}
+		-- Skipping output Out1
+		p_1_Lab3Sim_real_T_0[3]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "Constant"
+
+	group "Constant1" -- block-group
+	{
+	 block: "Constant"
+	}
+		-- Skipping output Out1
+		p_1_Lab3Sim_real_T_0[2]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "Constant1"
+
+	group "Constant2" -- block-group
+	{
+	 block: "Constant"
+	}
+		-- Skipping output Out1
+		p_1_Lab3Sim_real_T_0[1]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "Constant2"
+
+	group "displacement" -- block-group
+	{
+	 block: "Gain"
+	}
+		p_0_Lab3Sim_real_T_0[5]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 flags:   OUTPUT|READONLY
+		}
+		p_1_Lab3Sim_real_T_0[6]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Gain"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "displacement"
+
+	group "rev" -- block-group
+	{
+	 block: "Gain"
+	}
+		p_0_Lab3Sim_real_T_0[4]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 flags:   OUTPUT|READONLY
+		}
+		p_1_Lab3Sim_real_T_0[5]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Gain"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "rev"
+
+	group "velocity" -- block-group
+	{
+	 block: "Gain"
+	}
+		p_0_Lab3Sim_real_T_0[3]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 flags:   OUTPUT|READONLY
+		}
+		p_1_Lab3Sim_real_T_0[4]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Gain"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "velocity"
+
+	group "Subtract" -- block-group
+	{
+	 block: "Sum"
+	}
+		p_0_Lab3Sim_real_T_0[0]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "Subtract"
+
+	group "Moving\nAverage" -- block-group
+	{
+	 block: "MATLABSystem"
+	}
+		p_0_Lab3Sim_real_T_0[6]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "Moving\nAverage"
+
+  
+  
+	group "DS1104ENC_POS_C1" -- subsystem-group
+
+		p_0_Lab3Sim_real_T_0[1]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Enc position"
+		 flags:   OUTPUT|READONLY
+		}
+		p_0_Lab3Sim_real_T_0[2]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Enc delta position"
+		 flags:   OUTPUT|READONLY
+		}
+
+	endgroup -- subsystem-group "DS1104ENC_POS_C1"
+  
+  
+	group "DS1104ENC_SETUP" -- subsystem-group
+
+
+	endgroup -- subsystem-group "DS1104ENC_SETUP"
+  
+  
+	group "DS1104SL_DSP_PWM3" -- subsystem-group
+
+
+	endgroup -- subsystem-group "DS1104SL_DSP_PWM3"
+  
+  
+	group "RTI Data" -- subsystem-group
+
+
+	endgroup -- subsystem-group "RTI Data"
+
+
+
+endgroup -- "Model Root"

@@ -1,0 +1,1 @@
+   Lab_5.c  Lab_5_trc_ptr.c 
